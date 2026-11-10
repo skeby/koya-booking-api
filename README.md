@@ -2,6 +2,8 @@
 
 Express + MongoDB API for booking clinic appointment slots, built for Task 1 of the Koya Academy assessment. It follows the contract at [koyaacademy.com/assessment-api](https://koyaacademy.com/assessment-api).
 
+**Live:** https://koya-booking-api-skeby.vercel.app (send `X-API-Key`)
+
 The booking page that uses it lives in [koya-booking-ui](https://github.com/skeby/koya-booking-ui).
 
 ## Endpoints
@@ -49,6 +51,12 @@ pnpm test
 ```
 
 39 integration tests run against a real MongoDB and cover every level, including 25 simultaneous bookings for one slot, simultaneous idempotent retries and simultaneous attempts against the rate limit.
+
+To check a deployed instance end to end (this calls `/reset`, so it wipes that instance's data):
+
+```bash
+API_URL=https://... API_KEY=... pnpm tsx scripts/live-check.ts
+```
 
 ## Deployment
 
