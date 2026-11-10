@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: process.env.ENV_FILE ?? ".env.production" });
 
-const API_URL = (process.env.API_URL ?? "https://koya-booking-api-skeby.vercel.app").replace(/\/$/, "");
+const API_URL = (process.env.API_URL ?? "https://api.booking.koya.checkmeout.me").replace(/\/$/, "");
 const API_KEY = process.env.API_KEY;
 if (!API_KEY) throw new Error("API_KEY missing");
 

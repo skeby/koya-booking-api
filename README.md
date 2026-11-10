@@ -2,7 +2,7 @@
 
 Express + MongoDB API for booking clinic appointment slots, built for Task 1 of the Koya Academy assessment. It follows the contract at [koyaacademy.com/assessment-api](https://koyaacademy.com/assessment-api).
 
-**Live:** https://koya-booking-api-skeby.vercel.app (send `X-API-Key`)
+**Live:** https://api.booking.koya.checkmeout.me (send `X-API-Key`). Booking page: https://booking.koya.checkmeout.me
 
 The booking page that uses it lives in [koya-booking-ui](https://github.com/skeby/koya-booking-ui).
 
