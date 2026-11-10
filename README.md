@@ -2,9 +2,20 @@
 
 Express + MongoDB API for booking clinic appointment slots, built for Task 1 of the Koya Academy assessment. It follows the contract at [koyaacademy.com/assessment-api](https://koyaacademy.com/assessment-api).
 
-**Live:** https://api.booking.koya.checkmeout.me (send `X-API-Key`). Booking page: https://booking.koya.checkmeout.me
+| | Live | Code |
+| --- | --- | --- |
+| API | https://api.booking.koya.checkmeout.me (send `X-API-Key`) | this repo |
+| Booking page | https://booking.koya.checkmeout.me | [github.com/skeby/koya-booking-ui](https://github.com/skeby/koya-booking-ui) |
 
-The booking page that uses it lives in [koya-booking-ui](https://github.com/skeby/koya-booking-ui).
+## The booking page
+
+The web page lives in its own repo: **[github.com/skeby/koya-booking-ui](https://github.com/skeby/koya-booking-ui)** (React 19, Vite, TypeScript, antd, Tailwind, TanStack Query).
+
+- **Book:** pick a doctor and a day, then a time; booked or started times are greyed out. Confirm with name and email.
+- **Confirmation:** the appointment's date, time, doctor and a short reference, with an option to cancel.
+- **My bookings:** look bookings up by email and page through them with the cursor from `GET /bookings`.
+- **API key stays server-side:** the browser only calls `/api/*` on the page's own domain. A small Vercel function adds `X-API-Key` and forwards to this API, and it only forwards the five routes the page uses (`/reset` is not reachable through the site).
+- **Safe retries:** each booking attempt sends an `Idempotency-Key`, so a double click or a retry can't book twice.
 
 ## Endpoints
 
